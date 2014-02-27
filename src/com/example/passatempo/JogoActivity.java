@@ -154,6 +154,8 @@ public class JogoActivity extends Activity {
 				}
 			}
 		});
+		
+		Bopt = (Button)findViewById(R.id.Bopt);
 
 	}
 
@@ -258,6 +260,7 @@ public class JogoActivity extends Activity {
 		Bsold.setEnabled(onoff);
 		Btech.setEnabled(onoff);
 		Bwall.setEnabled(onoff);
+		Bopt.setEnabled(onoff);
 	}
 
 }
