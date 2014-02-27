@@ -30,8 +30,7 @@ public class JogoActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_jogo);
-		buttonsFunc(true);
-
+		
 		Bundle data = getIntent().getExtras();
 		name = data.getString("name");
 		P1 = new Player(name);
@@ -156,6 +155,9 @@ public class JogoActivity extends Activity {
 		});
 		
 		Bopt = (Button)findViewById(R.id.Bopt);
+		
+		
+		buttonsFunc(true);
 
 	}
 

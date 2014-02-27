@@ -237,14 +237,15 @@ public final class R {
         public static final int Tsold=0x7f09000c;
         public static final int Ttech=0x7f09000d;
         public static final int Twall=0x7f09000b;
-        public static final int action_settings=0x7f090015;
-        public static final int baseAlig=0x7f090010;
+        public static final int action_settings=0x7f090016;
+        public static final int baseAlig=0x7f090011;
         public static final int contGame=0x7f09000f;
-        public static final int dialogButtonOK=0x7f090014;
-        public static final int image=0x7f090011;
-        public static final int nameEdit=0x7f090013;
+        public static final int dialogButtonOK=0x7f090015;
+        public static final int image=0x7f090012;
+        public static final int nameEdit=0x7f090014;
         public static final int newGame=0x7f09000e;
-        public static final int text=0x7f090012;
+        public static final int quitGame=0x7f090010;
+        public static final int text=0x7f090013;
     }
     public static final class layout {
         public static final int activity_jogo=0x7f030000;

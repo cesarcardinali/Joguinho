@@ -2,12 +2,20 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
 <!--   Non focused states -->
-    <item android:drawable="@drawable/button1_unfocused" android:state_focused="false" android:state_pressed="false" android:state_selected="false"/>
+    <item android:drawable="@drawable/button1_unfocused" android:state_enabled="true" android:state_focused="false" android:state_pressed="false" android:state_selected="false"/>
     <item android:drawable="@drawable/button1_unfocused" android:state_focused="false" android:state_pressed="false" android:state_selected="true"/>
 <!--   Focused states -->
-    <item android:drawable="@drawable/button1_focused" android:state_focused="true" android:state_pressed="false" android:state_selected="false"/>
+    <item android:drawable="@drawable/button1_focused" android:state_enabled="true" android:state_focused="true" android:state_pressed="false" android:state_selected="false"/>
     <item android:drawable="@drawable/button1_focused" android:state_focused="true" android:state_pressed="false" android:state_selected="true"/>
 <!--   Pressed -->
     <item android:drawable="@drawable/button1_pressed" android:state_pressed="true"/>
-
+<!-- Disabled -->
+    <item android:state_enabled="false">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+            <stroke android:width="1.5dp" android:color="#000000" />
+            <corners android:radius="5dp" />
+            <gradient android:type="radial" android:gradientRadius="130.1" android:startColor="#FF555555" android:endColor="#00555555" />
+        </shape>
+    </item>
+    
 </selector>

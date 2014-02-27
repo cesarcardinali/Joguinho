@@ -79,6 +79,14 @@ public class MainActivity extends Activity {
 			;
 		}
 		
+		quitGame = (Button)findViewById(R.id.quitGame);
+		quitGame.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				System.exit(0);
+			}
+		});
+		;
+		
 	}
 	
 

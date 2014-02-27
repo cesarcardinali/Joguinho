@@ -2,19 +2,12 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
 <!-- Non focused states -->
-    <item android:state_focused="false" android:state_pressed="false" android:state_selected="false"><shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <item android:state_focused="false" android:state_pressed="false" android:state_enabled="true" android:state_selected="false"><shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
             <stroke android:width="1.5dp" android:color="#000000" />
             <corners android:radius="3dp" />
             <gradient android:type="radial" android:gradientRadius="130.1" android:endColor="#0000DD" android:startColor="#AAAAFF" />
         </shape>
     </item>
-    
-    <item android:state_focused="false" android:state_pressed="false" android:state_selected="true"><shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
-            <stroke android:width="1.5dp" android:color="#000000" />
-            <corners android:radius="3dp" />
-            <gradient android:type="radial" android:gradientRadius="130.1" android:endColor="#0000DD" android:startColor="#AAAAFF" />
-        </shape></item>
-
 
 <!-- Pressed -->
     <item android:state_pressed="true">
@@ -22,6 +15,15 @@
             <stroke android:width="1.5dp" android:color="#000000" />
             <corners android:radius="5dp" />
             <gradient android:type="radial" android:gradientRadius="130.1" android:startColor="#0000DD" android:endColor="#AAAAFF" />
+        </shape>
+        </item>
+        
+<!-- Disabled -->
+    <item android:state_enabled="false">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+            <stroke android:width="1.5dp" android:color="#000000" />
+            <corners android:radius="5dp" />
+            <gradient android:type="radial" android:gradientRadius="130.1" android:startColor="#FF555555" android:endColor="#00555555" />
         </shape>
         </item>
 
