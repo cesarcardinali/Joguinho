@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/swords"
+    android:orientation="vertical"
+    
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    
+    tools:context=".MainActivity" >
+
+        <Button
+            android:id="@+id/newGame"
+            android:layout_width="40pt"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30pt"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button1"
+            android:text="@string/novo"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/contGame"
+            android:layout_width="40pt"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:background="@drawable/button1"
+            android:text="@string/continuar"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="40pt"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:background="@drawable/button2"
+            android:text="@string/opcoes"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="40pt"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:padding="5dp"
+            android:background="@drawable/button3"
+            android:text="@string/sair"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+
+</LinearLayout>

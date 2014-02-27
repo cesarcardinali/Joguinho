@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PassaTempo</string>
+    <string name="action_settings">Settings</string>
+    <string name="atacar">Attack</string>
+    <string name="defender">Defend</string>
+    <string name="novo">New Game</string>
+    <string name="sair">Quit</string>
+    <string name="opcoes">Options</string>
+    <string name="continuar">Continue</string>
+    <string name="title_activity_jogo">Jogo</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
