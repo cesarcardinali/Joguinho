@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class JogoActivity extends Activity {
 
 	String name;
-	int Turn;
+	int Turn, contGame;
 
 	Player P1, Bot;
 
@@ -32,10 +32,17 @@ public class JogoActivity extends Activity {
 		setContentView(R.layout.activity_jogo);
 		
 		Bundle data = getIntent().getExtras();
-		name = data.getString("name");
-		P1 = new Player(name);
-		Bot = new Player("AngryBot");
-		Turn = 0;
+		if (data.getInt("contGa") == 1){
+			P1 = (Player) data.getSerializable("p1");
+			Bot = (Player) data.getSerializable("bot");
+			Turn = 1;
+		} else {
+			name = data.getString("name");
+			P1 = new Player(name);
+			Bot = new Player("AngryBot");
+			Turn = 0;
+		}
+		
 		/*
 		 * Toast.makeText(getApplicationContext(), P1.getName() + "\n" +
 		 * P1.getGold() + "\n" + P1.getIncoming() + "\n" + P1.getSoldiers() +
@@ -44,8 +51,9 @@ public class JogoActivity extends Activity {
 		 */
 
 		Tname = (TextView) findViewById(R.id.PlayerName);
-		Tname.setText(name + ": " + P1.getHealth());
+		Tname.setText(P1.getName()+ ": " + P1.getHealth());
 		botName = (TextView) findViewById(R.id.BotName);
+		botName.setText(Bot.getName()+ ": " + Bot.getHealth());
 		Tgold = (TextView) findViewById(R.id.Tgold);
 		Tgold.setText("" + P1.getGold());
 		Twall = (TextView) findViewById(R.id.Twall);
@@ -172,6 +180,10 @@ public class JogoActivity extends Activity {
 	public void onBackPressed() {
 		Intent telaJogo = new Intent(JogoActivity.this, MainActivity.class);
 		telaJogo.putExtra("contGa", 1); // Optional parameters
+		telaJogo.putExtra("p1", P1);
+		telaJogo.putExtra("bot", Bot);
+		telaJogo.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		finish();
 		JogoActivity.this.startActivity(telaJogo);
 		// salvar status
 	}
@@ -213,8 +225,8 @@ public class JogoActivity extends Activity {
 					Ep1.setText(Ep1.getText().insert(0, "Sua Defesa falhou!\nVoce perdeu " + (Atc - Def) + " de saude\n"));
 					Tname.setText(P1.getName() + ": " + P1.getHealth());
 					if (VictoryVerify() == 1) {
-						Ebot.setText(Ebot.getText().insert(0, "\n\nVOCE VENCEU !!\n\n\n\n\n\n\n\n"));
-						Ep1.setText(Ep1.getText().insert(0, "\n\nVOCE PERDEU !!\n\n\n\n\n\n\n\n"));
+						Ebot.setText(Ebot.getText().insert(0, "\n\nVOCE VENCEU !!\n\n\n\n"));
+						Ep1.setText(Ep1.getText().insert(0, "\n\nVOCE PERDEU !!\n\n\n\n"));
 						// Dialog
 					}
 				} else if (Atc == Def) {
@@ -228,12 +240,13 @@ public class JogoActivity extends Activity {
 					Ebot.setText(Ebot.getText().insert(0, "Ataque falho!\nVoce perdeu todas as tropas\n"));
 					Ep1.setText(Ep1.getText().insert(0, "Defesa venceu!\nVoce teve " + (Def - Atc) + " baixas\n"));
 				}
-				statsUpdate(P1);
 				if (VictoryVerify() == 2) {
-					Ebot.setText(Ebot.getText().insert(0, "\n\nVOCE VENCEU !!\n\n\n\n\n\n\n\n"));
-					Ep1.setText(Ep1.getText().insert(0, "\n\nVOCE PERDEU !!\n\n\n\n\n\n\n\n"));
+					Ebot.setText(Ebot.getText().insert(0, "\n\nVOCE VENCEU !!\n\n\n\n"));
+					Ep1.setText(Ep1.getText().insert(0, "\n\nVOCE PERDEU !!\n\n\n\n"));
 					buttonsFunc(false);
 					// Dialog
+				} else{
+					statsUpdate(P1);
 				}
 			}
 		}
@@ -241,7 +254,7 @@ public class JogoActivity extends Activity {
 	}
 	
 	private void statsUpdate(Player P){
-		Tname.setText(name + ": " + P1.getHealth());
+		Tname.setText(P1.getName() + ": " + P1.getHealth());
 		Tgold.setText("" + P1.getGold());
 		Twall.setText("" + P1.getWalls());
 		Tsold.setText("" + P1.getSoldiers());
